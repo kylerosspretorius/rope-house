@@ -3,15 +3,17 @@
 import { useEffect, useState } from 'react'
 
 export default function ScrollToTop() {
+  const [mounted, setMounted] = useState(false)
   const [visible, setVisible] = useState(false)
 
   useEffect(() => {
+    setMounted(true)
     const onScroll = () => setVisible(window.scrollY > 400)
     window.addEventListener('scroll', onScroll)
     return () => window.removeEventListener('scroll', onScroll)
   }, [])
 
-  if (!visible) return null
+  if (!mounted || !visible) return null
 
   return (
     <button
