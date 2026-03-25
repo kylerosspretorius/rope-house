@@ -12,6 +12,15 @@ const config: Config = {
         background: "var(--background)",
         foreground: "var(--foreground)",
       },
+      keyframes: {
+        sway: {
+          '0%, 100%': { transform: 'rotate(-5deg)' },
+          '50%':       { transform: 'rotate(5deg)' },
+        },
+      },
+      animation: {
+        sway: 'sway 4s ease-in-out infinite',
+      },
     },
   },
   plugins: [],
