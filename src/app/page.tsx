@@ -1,3 +1,4 @@
+import Image from 'next/image'
 import { client } from '../../sanity/lib/client'
 import { allProductsQuery } from '../../sanity/queries'
 import { Product } from '@/types/product'
@@ -84,18 +85,20 @@ export default async function Home() {
             </div>
           </div>
           <div className="grid grid-cols-2 gap-4">
-            <div className="aspect-[3/4] overflow-hidden">
-              <img
+            <div className="aspect-[3/4] overflow-hidden relative">
+              <Image
                 src="/images/rope-pillar-lamp.jpg"
                 alt="Rope Pillar Lamp"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
-            <div className="aspect-[3/4] overflow-hidden mt-10">
-              <img
+            <div className="aspect-[3/4] overflow-hidden relative mt-10">
+              <Image
                 src="/images/halo-rope-mirror-wall.jpg"
                 alt="Halo Rope Mirror"
-                className="w-full h-full object-cover"
+                fill
+                className="object-cover"
               />
             </div>
           </div>
@@ -190,7 +193,7 @@ export default async function Home() {
           <p className="text-xs tracking-[0.4em] uppercase text-stone-400 mb-3">Get in Touch</p>
           <h2 className="text-3xl md:text-4xl font-light text-stone-800">Contact Us</h2>
           <p className="mt-5 text-stone-500 max-w-sm mx-auto">
-            Questions about a product, a custom order, or just want to say hello — we'd love to hear from you.
+            Questions about a product, a custom order, or just want to say hello — we&apos;d love to hear from you.
           </p>
           <div className="mt-14 flex flex-col sm:flex-row justify-center gap-8 sm:gap-16">
             <div>
