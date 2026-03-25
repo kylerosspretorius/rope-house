@@ -31,8 +31,19 @@ export default function Navbar() {
     >
       <div className="max-w-6xl mx-auto px-6 h-16 flex items-center justify-between">
 
-        {/* Hanging logo */}
-        <div className="relative flex flex-col items-center" style={{ marginTop: '120px' }}>
+        {/* Logo — static small on narrow screens */}
+        <a href="#" className="block flex-shrink-0 max-[400px]:block hidden">
+          <Image
+            src="/images/logo-rope-house.jpeg"
+            alt="The Rope House"
+            width={40}
+            height={40}
+            className="rounded-full shadow border border-stone-300"
+          />
+        </a>
+
+        {/* Hanging logo — hidden on narrow screens */}
+        <div className="relative flex flex-col items-center max-[400px]:hidden" style={{ marginTop: '120px' }}>
           <div className="absolute bottom-full flex gap-[3px]">
             <div className="w-[2px] h-20 bg-gradient-to-b from-stone-400 to-stone-600 rounded-b" />
             <div className="w-[2px] h-24 bg-gradient-to-b from-stone-300 to-stone-500 rounded-b" />

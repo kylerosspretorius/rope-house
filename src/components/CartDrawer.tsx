@@ -59,7 +59,7 @@ export default function CartDrawer() {
                     <div className="flex-1 flex flex-col justify-between">
                       <div>
                         <h3 className="text-sm font-medium text-stone-800">{item.name}</h3>
-                        <p className="text-sm text-stone-500 mt-0.5">R{item.price.toLocaleString('en-ZA')}</p>
+                        <p className="text-sm text-stone-500 mt-0.5">R {item.price.toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</p>
                       </div>
                       <div className="flex items-center justify-between">
                         <div className="flex items-center border border-stone-200">
@@ -97,7 +97,7 @@ export default function CartDrawer() {
           <div className="px-6 py-5 border-t border-stone-200 space-y-4">
             <div className="flex justify-between text-sm">
               <span className="tracking-wide text-stone-600">Subtotal</span>
-              <span className="font-medium text-stone-800">R{total().toLocaleString('en-ZA')}</span>
+              <span className="font-medium text-stone-800">R {total().toFixed(2).replace(/\B(?=(\d{3})+(?!\d))/g, ',')}</span>
             </div>
             <p className="text-xs text-stone-400">Shipping calculated at checkout</p>
             <button

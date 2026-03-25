@@ -13,7 +13,7 @@ export default async function Home() {
     <main>
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
-      <section className="relative h-screen flex items-end pb-28 px-6 bg-stone-900 overflow-hidden">
+      <section className="relative h-[60vh] max-[400px]:h-[60vh] sm:h-screen flex items-end pb-28 px-6 bg-stone-900 overflow-hidden">
         <div
           className="absolute inset-0 bg-cover bg-center opacity-55"
           style={{ backgroundImage: "url('/images/hero-rope.jpg')" }}
