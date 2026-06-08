@@ -1,3 +1,10 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Payment Cancelled',
+  robots: { index: false, follow: false },
+}
+
 export default function CancelPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-stone-50 px-6">

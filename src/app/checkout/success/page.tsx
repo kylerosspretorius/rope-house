@@ -1,3 +1,10 @@
+import { Metadata } from 'next'
+
+export const metadata: Metadata = {
+  title: 'Order Confirmed',
+  robots: { index: false, follow: false },
+}
+
 export default function SuccessPage() {
   return (
     <main className="min-h-screen flex items-center justify-center bg-stone-50 px-6">

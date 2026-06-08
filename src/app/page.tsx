@@ -6,11 +6,59 @@ import ProductCard from '@/components/ProductCard'
 
 export const revalidate = 60
 
+const siteUrl = process.env.NEXT_PUBLIC_SITE_URL ?? 'https://rope-house.vercel.app'
+
 export default async function Home() {
   const products: Product[] = await client.fetch(allProductsQuery)
 
+  const organizationSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'Organization',
+    name: 'The Rope House',
+    url: siteUrl,
+    logo: `${siteUrl}/images/logo-rope-house.jpeg`,
+    description: 'Handcrafted natural jute rope homewares made in South Africa.',
+    contactPoint: {
+      '@type': 'ContactPoint',
+      telephone: '+27713515650',
+      contactType: 'customer service',
+      areaServed: 'ZA',
+    },
+  }
+
+  const productListSchema = {
+    '@context': 'https://schema.org',
+    '@type': 'ItemList',
+    name: 'The Rope House Collection',
+    itemListElement: products.map((product, index) => ({
+      '@type': 'ListItem',
+      position: index + 1,
+      item: {
+        '@type': 'Product',
+        name: product.name,
+        description: product.description,
+        offers: {
+          '@type': 'Offer',
+          price: product.price,
+          priceCurrency: 'ZAR',
+          availability: product.stock > 0
+            ? 'https://schema.org/InStock'
+            : 'https://schema.org/OutOfStock',
+        },
+      },
+    })),
+  }
+
   return (
     <main>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(productListSchema) }}
+      />
 
       {/* ── HERO ─────────────────────────────────────────────────────── */}
       <section className="relative h-[60vh] max-[400px]:h-[60vh] sm:h-screen flex items-end pb-28 px-6 bg-stone-900 overflow-hidden">
@@ -228,6 +276,7 @@ export default async function Home() {
               { label: 'Collection', href: '#collection' },
               { label: 'Craft', href: '#craft' },
               { label: 'Care', href: '#care' },
+              { label: 'FAQ', href: '/faq' },
               { label: 'Contact', href: '#contact' },
             ].map((link) => (
               <a key={link.href} href={link.href} className="text-xs tracking-widest uppercase text-stone-500 hover:text-stone-300 transition-colors">
