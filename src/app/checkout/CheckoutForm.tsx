@@ -196,7 +196,7 @@ export default function CheckoutForm({ delivery }: Props) {
                     className={`${inputClass} ${session?.user?.email ? 'bg-stone-50 text-stone-400 cursor-default' : ''}`}
                     placeholder="your@email.com"
                   />
-                  {!session && <p className="mt-1.5 text-xs text-stone-400">We'll send your order confirmation here.</p>}
+                  {!session && <p className="mt-1.5 text-xs text-stone-400">We&apos;ll send your order confirmation here.</p>}
                 </div>
                 <div>
                   <label className={labelClass}>Phone Number</label>

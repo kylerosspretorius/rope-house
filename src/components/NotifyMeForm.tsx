@@ -18,9 +18,9 @@ export default function NotifyMeForm({ productId, productSlug, productName }: Pr
   if (submitted) {
     return (
       <div className="bg-stone-50 border border-stone-200 px-5 py-4">
-        <p className="text-sm text-stone-700 font-medium">You're on the list.</p>
+        <p className="text-sm text-stone-700 font-medium">You&apos;re on the list.</p>
         <p className="text-xs text-stone-400 mt-1">
-          We'll email you as soon as <span className="text-stone-600">{productName}</span> is back in stock.
+          We&apos;ll email you as soon as <span className="text-stone-600">{productName}</span> is back in stock.
         </p>
       </div>
     )

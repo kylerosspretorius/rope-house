@@ -164,7 +164,7 @@ export default function FaqPage() {
         {/* CTA */}
         <div className="bg-white border border-stone-200 p-8 text-center">
           <p className="text-sm font-light text-stone-700 mb-1">Still have a question?</p>
-          <p className="text-xs text-stone-400 mb-6">We're happy to help — reach out directly.</p>
+          <p className="text-xs text-stone-400 mb-6">We&apos;re happy to help — reach out directly.</p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
             <a
               href="mailto:ropehouseafrica@gmail.com"
